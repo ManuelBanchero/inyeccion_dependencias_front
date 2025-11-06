@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
+import shellIcon from '../resources/shell-icon.png';
 import { signup } from '../../lib/api';
 
 export default function SignUpPage() {
@@ -41,7 +43,10 @@ export default function SignUpPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 p-6">
       <div className="w-full max-w-md rounded bg-white/5 p-6">
-        <h1 className="mb-4 text-center text-2xl font-bold text-white">Sign Up</h1>
+        <div className="flex flex-col items-center gap-3 mb-4">
+          <Image src={shellIcon} alt="shell" width={72} height={72} className="rounded" />
+          <h1 className="text-center text-2xl font-bold text-white">Sign Up</h1>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
